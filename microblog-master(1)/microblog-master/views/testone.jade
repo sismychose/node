@@ -1,0 +1,119 @@
+extends test
+block content
+	main.main
+		div 'hello'
+		p hello #{name}
+		div.contenter abc
+		div#content 'vns'
+		div#con.con 'lll'
+		div
+			#conl 'clls'
+			.bar 'jfls'
+		p
+			| abc def ghi
+			| jkl mno pqr
+			| stu vwx yz
+		#user #{name} #{email}
+		p \#{guyi}
+		- var html = "<script>123</script>"
+		| !{html}
+		label
+			| username:
+			input(name='user[name]')
+		label username:
+			input(name="user[name]")
+		p abcd
+		p.
+			i think it is end.
+		p.
+			foo\bar
+		// 注释
+		p aaa
+		p bbb
+		//- 不输出注释
+		p ccc
+		p ddd
+		//
+			#contentntn
+				p lllll
+		ul
+			li.first: a(href="#") foo
+			li: a(href="#") bar
+			li.last: a(href="#") bza
+		p -------------
+		//friends=10
+		case friends
+			when 0
+				p you have no friends
+			when 1
+				p you have a friend
+			default
+				p you have #{friends} friends
+		case friends
+			when 0: p you have no friends
+			when 1: p you have a friend
+			default: p you have #{friends} friends
+		input(type="checkbox",checked)
+		div(something=null)
+		input(type="checkbox"
+			  name="aaaaa"
+			  checked)
+		rss(xmlns:atom="atom")
+		a(href='/users/123')=123
+		bodyClasses=['user','authenticated']
+		body(class=bodyClasses)
+		div.
+			<h1>哈哈哈哈哈</h1>
+			<p>嘻嘻嘻嘻嘻</p>
+			<em>嘿嘿嘿嘿嘿</em>
+		//
+			:markdown
+				jk!jfkj _and_markdown,very **cool**
+				e can even link to [stuff](http://google.com)
+		var foo = 'bar';
+		- for (var key in obj)
+			p= obj[key]
+		if(foo)
+			ul
+				li yay
+				li foo
+				li worked
+		else
+			p oh no! didnt work
+		- var foo = 'bar'
+		= foo
+		h1= foo
+		p!= aVarContainingMoreHTML
+		- var foo = 'foo ' + 'bar'
+		foo = 'foo ' + 'bar'
+		if foo == 'bar'
+			ul
+				li yay
+				li foo
+				li worked
+		else
+			p oh no! didnt work
+		- var items = ["one","two","three"]
+			each item in items
+				li= item
+			if(items.length)
+				ul
+					items.forEach(function(item){
+						li= item
+					})
+		items = ["one","two","three"]
+		each item,i in items
+			li #{item}: #{i}
+		- var obj = {foo:'bar'}
+		each val,key in obj
+			li #{key}: #{val}
+		mixin list
+			ul
+				li foo
+				li bar
+				li cae
+		
+
+
+
+
